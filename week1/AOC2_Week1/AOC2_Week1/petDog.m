@@ -10,4 +10,30 @@
 
 @implementation petDog
 
+-(id)init
+{
+    if (self = [super init])
+    {
+        petName = @"Puppy Face";
+        petWeight = 12;
+        petFoodAmount = 3;
+        petThirstMeter = 2;
+        dogFriends = 13;
+    }
+    return self;
+}
+
+-(int)getDogFriends
+{
+    dogFriends = (petThirstMeter * (7 * petFoodAmount / petWeight));
+    NSLog(@"The dogs need %i bowls of water.", dogFriends);
+    return dogFriends;
+}
+
+-(void)setPetThirstmeter : (int)setPetThirstMeter
+{
+    petThirstMeter = setPetThirstMeter;
+    NSLog(@"The dogs need %i bowls of water, they are thirsty!", petThirstMeter);
+}
+
 @end

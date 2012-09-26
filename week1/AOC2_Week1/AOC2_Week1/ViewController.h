@@ -17,11 +17,16 @@
 
 @interface ViewController : UIViewController
 {
+    //static labels
     UILabel *textlabelName;
     UILabel *textlabelType;
-    UILabel *textlabelWeight;
     UILabel *textlabelFood;
     UILabel *textlabelWater;
+    
+    //dynamic labels
+    UILabel *textlabelWeight;
+    UILabel *textlabelThirstMeter;
+    UILabel *textlabelHungerMeter;
     UILabel *textlabelLivesAvailable;
 }
 @end

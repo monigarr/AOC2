@@ -6,8 +6,16 @@
 //  Copyright (c) 2012 Monica Peters. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "PetClass.h"
 
-@interface petCat : NSObject
+@interface petCat : PetClass
+{
+    //1 is a little bratty and 5 is brattiest
+    @public
+    int catBrattinessMood;
+}
+
+-(int)getMood;
+-(void)setBrattinessMood : (int)howBratty;
 
 @end

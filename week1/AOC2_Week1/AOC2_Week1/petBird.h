@@ -6,8 +6,15 @@
 //  Copyright (c) 2012 Monica Peters. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "PetClass.h"
 
-@interface petBird : NSObject
+@interface petBird : PetClass
+{
+    @public
+    int birdSize;
+}
+
+-(int)getBirdSize;
+-(void)setBirdSize : (int)birdSizeInInches;
 
 @end

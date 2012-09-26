@@ -8,36 +8,68 @@
 
 #import "PetClass.h"
 
+
 @implementation PetClass
 
 -(void)setPetName : (NSString *)newPetName
 {
     petName = newPetName;
-    NSLog(@"My pet\'s name is %@", petName);
+    petHungerMeter = 5 / petThirstMeter * 3;
+    NSLog(@"You won a Pet %@", petName);
+    
+    if (petHungerMeter <= 0)
+    {
+        NSLog(@"Your new %@ wants %i bowls of food", petName, petHungerMeter);
+    }
+    else if (petHungerMeter >= 2)
+    {
+        NSLog(@"Your new %@ wants %i bowls of food", petName, petHungerMeter);
+    }
+    else if (petHungerMeter >= 3)
+    {
+        NSLog(@"Your new %@ is starving! Give it %i bowls of food asap!", petName, petHungerMeter);
+    }
+    
 }
 
 -(void)setPetWeight : (int)newPetWeight
 {
-    weight = newPetWeight;
-    NSLog(@"My pet weighs %i pounds.", weight);
+    //re use petName from above
+    petWeight = newPetWeight;
+    NSLog(@"Your pet %@ weighs about %i pounds.", petName, petWeight);
 }
 
 -(void)setPetFoodAmount : (int)newPetFoodAmount
 {
-    
+    petFoodAmount = newPetFoodAmount;
+    NSLog(@"Your pet should eat about %i bowls of food.", petFoodAmount);
 }
 
 -(void)setPetWaterAmount : (int)newPetWaterAmount
 {
-    
+    petWaterAmount = newPetWaterAmount;
+    NSLog(@"Your pet probably wants about %i bowls of water", petWaterAmount);
+}
+
+-(void)setPetThirstMeter : (int)newPetThirstMeter
+{
+    petThirstMeter = newPetThirstMeter;
+    NSLog(@"Pet Thirst Meter: %i", petThirstMeter);
+}
+
+-(void)setPetHungerMeter: (int)newPetHungerMeter
+{
+    petHungerMeter = newPetHungerMeter;
+    NSLog(@"Pet Hunger Meter: %i", petHungerMeter);
 }
 
 -(void)setPetLivesAvailable : (int)newPetLivesAvailable
 {
-    
+    petLivesAvailable = newPetLivesAvailable;
+    NSLog(@"This pet has about %i lives left", petLivesAvailable);
 }
 
--(NSString*)getPetName
+-(NSString *)getPetName
 {
     return petName;
 }
@@ -59,10 +91,8 @@
 
 -(int)getPetLivesAvailable
 {
-    petLivesAvailable = petFood + petWater / petWeight;
+    petLivesAvailable = petFoodAmount + petThirstMeter + petHungerMeter / petWeight;
     return petLivesAvailable;
 }
-
-
 
 @end

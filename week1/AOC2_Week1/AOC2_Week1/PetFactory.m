@@ -20,13 +20,16 @@
     {
         NSLog(@"Add your Pet Type");
         return nil;
-    }else if(petType == 1)
+    }
+    else if(petType == 1)
     {
         return [[petCat alloc]init];
-    }else if(petType == 2)
+    }
+    else if(petType == 2)
     {
         return [[petDog alloc] init];
-    }else if (petType == 3)
+    }
+    else if (petType == 3)
     {
         return [[petBird alloc]init];
     }
