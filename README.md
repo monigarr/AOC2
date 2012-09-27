@@ -17,5 +17,9 @@ PROJECT 1
 	3 Static Labels
 	3 Dynamic Labels
 	Design Pattern: static Factory
-		1 Base Class
-		3 Sub Classes
+		1 Base Class ->  petFactory
+		3 Sub Classes -> petCat -> petDog, petBird
+
+		petFactory
+			petCat
+				petDog, petBird
