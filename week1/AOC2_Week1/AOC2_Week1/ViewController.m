@@ -27,11 +27,11 @@
     [self.view addSubview:textlabelName];
     
     
-    //textlabelType = [[UILabel alloc]initWithFrame:CGRectMake(0, 10, 200, 50)];
-    //textlabelType.backgroundColor = [UIColor whiteColor];
-    //textlabelType.text = @"Pet Type";
-    //textlabelType.textAlignment = kCTCenterTextAlignment;
-    //[self.view addSubview:textlabelType];
+    textlabelType = [[UILabel alloc]initWithFrame:CGRectMake(0, 10, 200, 50)];
+    textlabelType.backgroundColor = [UIColor whiteColor];
+    textlabelType.text = @"Pet Type";
+    textlabelType.textAlignment = kCTCenterTextAlignment;
+    [self.view addSubview:textlabelType];
     
     
     // 3 Dynamic Labels
@@ -77,20 +77,25 @@
     
 
     //Static Factory Calls
+    //data shows in the log output
+    //but does not show in the visual view for end users yet
     petCat *cat = (petCat *) [PetFactory createPet:1];
     [cat setPetName:@"Cat"];
     [cat setPetWeight:15];
-    textlabelName = [NSString stringWithFormat:@"Pet Name: %@ Life Meter: %i",[cat getPetName], [cat getPetLivesAvailable]];
+    textlabelInfo = [NSString stringWithFormat:@"Pet Name: %@ Life Meter: %i",[cat getPetName], [cat getPetLivesAvailable]];
+    textlabelInfo.textAlignment = kCTLeftTextAlignment;
     
     petDog *dog = (petDog *) [PetFactory createPet:2];
     [dog setPetName:@"Dog"];
     [dog setPetWeight:30];
-    textlabelName = [NSString stringWithFormat:@"Pet Name: %@ Life Meter: %i",[dog getPetName], [dog getPetLivesAvailable]];
+    textlabelInfo = [NSString stringWithFormat:@"Pet Name: %@ Life Meter: %i",[dog getPetName], [dog getPetLivesAvailable]];
+    textlabelInfo.textAlignment = kCTLeftTextAlignment;
     
     petBird *bird = (petBird *) [PetFactory createPet:3];
     [bird setPetName:@"Bird"];
     [bird setPetWeight:2];
-    textlabelName = [NSString stringWithFormat:@"Pet Name: %@ Life Meter: %i",[bird getPetName], [bird getPetLivesAvailable]];
+    textlabelInfo = [NSString stringWithFormat:@"Pet Name: %@ Life Meter: %i",[bird getPetName], [bird getPetLivesAvailable]];
+    textlabelInfo.textAlignment = kCTLeftTextAlignment;
 }
 
 -(void)viewDidUnload

@@ -18,7 +18,7 @@
 {
     if(petType == 0)
     {
-        NSLog(@"Add your Pet Type");
+        NSLog(@"You did not win a Pet this time.");
         return nil;
     }
     else if(petType == 1)

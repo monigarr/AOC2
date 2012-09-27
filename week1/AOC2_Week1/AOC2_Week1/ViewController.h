@@ -28,5 +28,6 @@
     UILabel *textlabelThirstMeter;
     UILabel *textlabelHungerMeter;
     UILabel *textlabelLivesAvailable;
+    UILabel *textlabelInfo;
 }
 @end
