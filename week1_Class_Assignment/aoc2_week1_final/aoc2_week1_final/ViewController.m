@@ -40,13 +40,13 @@
     [self.view addSubview:textLabelMonica];
     
     uiTextViewPet1 = [[UITextView alloc]initWithFrame:CGRectMake(40, 65, 200, 100)];
-    [self.view addSubview:pet1];
+    [self.view addSubview:uiTextViewPet1];
     
     uiTextViewPet2 = [[UITextView alloc]initWithFrame:CGRectMake(40, 190, 200, 100)];
-    [self.view addSubview:pet2];
+    [self.view addSubview:uiTextViewPet2];
     
     uiTextViewPet3 = [[UITextView alloc]initWithFrame:CGRectMake(40, 305, 200, 100)];
-    [self.view addSubview:pet3];
+    [self.view addSubview:uiTextViewPet3];
     
     
     
