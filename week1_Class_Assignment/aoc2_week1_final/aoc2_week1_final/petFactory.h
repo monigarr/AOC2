@@ -4,7 +4,7 @@
 //
 //  Created by Monica Peters on 9/27/12.
 //  Copyright (c) 2012 Monica Peters. All rights reserved.
-//
+//  deleted first project attempt. keeping this as the final project for week1.
 
 #import <Foundation/Foundation.h>
 #import "petCat.h"
