@@ -11,7 +11,7 @@
 @implementation petDog
 
 //setup getters & setters
-@synthesize petAgeInHumanYears, petAgeInDogYears;
+@synthesize barkLoudness, petAgeInDogYears;
 
 //customize init to set unique data members
 -(id)init
@@ -21,13 +21,14 @@
     {
         [self setPetAgeInDogYears:7];
         [self setPetAgeInHumanYears:1];
-        //replace with label
+        [self setBarkLoudness:2];
         NSLog(@"Pet Dog was Created");
     }
     return self;
 };
 
 //over ride calculate pet age in human years method
+//from our base class (PetAnimal)
 -(void)calculatePetAgeInHumanYears
 {
     [self setPetAgeInDogYears:(petAgeInHumanYears * 7)];

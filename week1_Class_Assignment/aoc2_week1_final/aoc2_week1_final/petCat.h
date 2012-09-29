@@ -7,31 +7,22 @@
 //  This is the Base Class
 
 #import <Foundation/Foundation.h>
+#import "PetAnimal.h"
 
-@interface petCat : NSObject
+@interface petCat : PetAnimal
 {
-    int petType;
+    int hairballs;
 }
 
-typedef enum
-{
-    CAT,
-    DOG,
-    BIRD
-}petType;
-
-//create properties to be shared by all pets
-//to create setters/getters for these, synthesize
-//in implementation file
-@property NSArray *petNames;
-@property NSString *petMood;
-@property int petAgeInHumanYears;
+//data members for pet's age in human years and cat years
+@property int hairballs;
+@property int petAgeInCatYears;
 
 //create methods
 -(id)init;
 
-//method to calculate pet thirst meter.
-//we will override this in the sub classes.
+//override this method from base class (PetAnimal)
+//in sub class (petCat).
 -(void)calculatePetAgeInHumanYears;
 
 @end

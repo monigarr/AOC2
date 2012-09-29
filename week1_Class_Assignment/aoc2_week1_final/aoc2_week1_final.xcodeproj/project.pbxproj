@@ -22,6 +22,7 @@
 		514C734D16149DB800B97EAD /* petCat.m in Sources */ = {isa = PBXBuildFile; fileRef = 514C734C16149DB800B97EAD /* petCat.m */; };
 		514C735016149DC800B97EAD /* petDog.m in Sources */ = {isa = PBXBuildFile; fileRef = 514C734F16149DC800B97EAD /* petDog.m */; };
 		514C735316149DD300B97EAD /* petBird.m in Sources */ = {isa = PBXBuildFile; fileRef = 514C735216149DD300B97EAD /* petBird.m */; };
+		51CB865D16178761003F8D0B /* PetAnimal.m in Sources */ = {isa = PBXBuildFile; fileRef = 51CB865C16178761003F8D0B /* PetAnimal.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,8 @@
 		514C734F16149DC800B97EAD /* petDog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = petDog.m; sourceTree = "<group>"; };
 		514C735116149DD300B97EAD /* petBird.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = petBird.h; sourceTree = "<group>"; };
 		514C735216149DD300B97EAD /* petBird.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = petBird.m; sourceTree = "<group>"; };
+		51CB865B16178761003F8D0B /* PetAnimal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PetAnimal.h; sourceTree = "<group>"; };
+		51CB865C16178761003F8D0B /* PetAnimal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PetAnimal.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,8 @@
 				514C734F16149DC800B97EAD /* petDog.m */,
 				514C735116149DD300B97EAD /* petBird.h */,
 				514C735216149DD300B97EAD /* petBird.m */,
+				51CB865B16178761003F8D0B /* PetAnimal.h */,
+				51CB865C16178761003F8D0B /* PetAnimal.m */,
 			);
 			path = aoc2_week1_final;
 			sourceTree = "<group>";
@@ -200,6 +205,7 @@
 				514C734D16149DB800B97EAD /* petCat.m in Sources */,
 				514C735016149DC800B97EAD /* petDog.m in Sources */,
 				514C735316149DD300B97EAD /* petBird.m in Sources */,
+				51CB865D16178761003F8D0B /* PetAnimal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +321,7 @@
 				514C734716149D7300B97EAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -24,15 +24,15 @@
     
     //labels
     textLabelPet1 = [[UILabel alloc]initWithFrame:CGRectMake(0, 25, 200, 100)];
-    textLabelPet1.text = @"Pet 1";
+    textLabelPet1.text = @"Dog";
     [self.view addSubview:textLabelPet1];
     
     textLabelPet2 = [[UILabel alloc]initWithFrame:CGRectMake(0, 150, 200, 100)];
-    textLabelPet2.text = @"Pet 2";
+    textLabelPet2.text = @"Cat";
     [self.view addSubview:textLabelPet2];
     
     textLabelPet3 = [[UILabel alloc]initWithFrame:CGRectMake(0, 275, 200, 100)];
-    textLabelPet3.text = @"Pet 3";
+    textLabelPet3.text = @"Bird";
     [self.view addSubview:textLabelPet3];
     
     textLabelMonica = [[UILabel alloc]initWithFrame:CGRectMake(0, 390, 320, 100)];
@@ -71,8 +71,9 @@
     {
         [puppyFace setPetNames:petNames[0]];
         [puppyFace setPetMood:@"very happy"];
+        [puppyFace setBarkLoudness:LOUDEST];
         NSLog(@"%@, your pet dog is %@ and about %i in human years and %i in dog years", [puppyFace petNames], [puppyFace petMood], [puppyFace petAgeInHumanYears], [puppyFace petAgeInDogYears]);
-        uiTextViewPet1.text = [NSString stringWithFormat:@"Name: %@ Mood: %@ Human Age: %i  Dog Age: %i", [puppyFace petNames], [puppyFace petMood], [puppyFace petAgeInHumanYears], [puppyFace petAgeInDogYears]];
+        uiTextViewPet1.text = [NSString stringWithFormat:@"Name: %@ Mood: %@ Human Age: %i  Dog Age: %i Bark Loudness: %i", [puppyFace petNames], [puppyFace petMood], [puppyFace petAgeInHumanYears], [puppyFace petAgeInDogYears], [puppyFace barkLoudness]];
     }
     
     //SMELLY CAT
@@ -84,9 +85,11 @@
         //[smellyCat setPetNames:nil];
         [smellyCat setPetMood:@"kind of happy"];
         [smellyCat setPetNames:petNames[1]];
-        [smellyCat setPetAgeInHumanYears:3];
-        NSLog(@"%@, your pet cat is %@ and %i years old in human years.", [smellyCat petNames], [smellyCat petMood], [smellyCat petAgeInHumanYears]);
-        uiTextViewPet2.text = [NSString stringWithFormat:@"Name: %@ Mood: %@ Human Age: %i", [smellyCat petNames], [smellyCat petMood], [smellyCat petAgeInHumanYears]];
+        [smellyCat setPetAgeInHumanYears:1];
+        [smellyCat setPetAgeInCatYears:5];
+        [smellyCat setHairballs:3];
+        NSLog(@"%@, your pet cat is %@ and %i years old in human years and just gifted you with %i hairballs.", [smellyCat petNames], [smellyCat petMood], [smellyCat petAgeInHumanYears], [smellyCat hairballs]);
+        uiTextViewPet2.text = [NSString stringWithFormat:@"Name: %@ Mood: %@ Human Age: %i Cat Age: %i", [smellyCat petNames], [smellyCat petMood], [smellyCat petAgeInHumanYears], [smellyCat petAgeInCatYears]];
     }
     
     //FRANKIE BIRD
@@ -101,7 +104,7 @@
         [frankie setPetMood:@"not so happy"];
         [frankie setBirdCageSize:SMALL];
         NSLog(@"%@, your pet bird is %i years old in human years, %i years old in bird years, and he is %@, because his bird cage is too %d", [frankie petNames], [frankie petAgeInHumanYears], [frankie petAgeInBirdYears], [frankie petMood], [frankie birdCageSize]);
-        uiTextViewPet3.text = [NSString stringWithFormat:@"Name: %@ Mood: %@ Human Age: %i Bird Cage Size: %d", [frankie petNames], [frankie petMood], [frankie petAgeInHumanYears], [frankie birdCageSize]];
+        uiTextViewPet3.text = [NSString stringWithFormat:@"Name: %@ Mood: %@ Human Age: %i Bird Age: %i Bird Cage Size: %d", [frankie petNames], [frankie petMood], [frankie petAgeInHumanYears], [frankie petAgeInBirdYears], [frankie birdCageSize]];
     }
     
     

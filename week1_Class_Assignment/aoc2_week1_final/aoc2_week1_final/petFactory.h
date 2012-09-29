@@ -7,6 +7,7 @@
 //  deleted first project attempt. keeping this as the final project for week1.
 
 #import <Foundation/Foundation.h>
+#import "PetAnimal.h"
 #import "petCat.h"
 #import "petDog.h"
 #import "petBird.h"
@@ -14,6 +15,6 @@
 @interface petFactory : NSObject
 
 //static class method
-+(petCat *)createNewPet : (int)petType;
++(PetAnimal *)createNewPet : (int)petAnimal;
 
 @end

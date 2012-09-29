@@ -7,12 +7,25 @@
 //  This is a subclass of petCat
 //  petCat is a subclass of petFactory
 
-#import "petCat.h"
+#import "petAnimal.h"
 
-@interface petDog : petCat
+@interface petDog : PetAnimal
+{
+    int barkLoudness;
+}
 
-//data members for pet's age in human years and cat years
-@property int petAgeInHumanYears;
+typedef enum
+{
+    LOUD,
+    LOUDER,
+    LOUDEST
+}barkLoudness;
+
+//data members for pet's age in human years and dog years
+@property int barkLoudness;
 @property int petAgeInDogYears;
+
+//over riding this from the base class (PetAnimal)
+-(void)calculatePetAgeInHumanYears;
 
 @end

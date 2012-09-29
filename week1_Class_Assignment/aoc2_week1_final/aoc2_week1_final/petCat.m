@@ -11,9 +11,12 @@
 @implementation petCat
 
 //setup setters and getters
-@synthesize petNames, petMood, petAgeInHumanYears;
+@synthesize hairballs, petAgeInCatYears;
 
-//initialize base class (petCat), create instance & set age to 1 year.
+//initialize petCat, create instance
+//set age to 1 year.
+//set mood to nil
+//set hairballs to nil
 -(id)init
 {
     self = [super init];
@@ -21,15 +24,20 @@
     if (self != nil)
     {
         [self setPetAgeInHumanYears:1];
+        [self setPetAgeInCatYears:3];
         [self setPetMood:nil];
+        [self setPetNames:nil];
+        [self setHairballs:1];
     }
     return self;
 }
 
+//over ride calculate pet age in human years method
+//from our base class (PetAnimal)
 -(void)calculatePetAgeInHumanYears
 {
-    //no calculation yet
-    NSLog(@"Your Pet is %i years old", petAgeInHumanYears);
+    [self setPetAgeInCatYears:(petAgeInHumanYears * 3)];
+    NSLog(@"%i Cat Years = %i Human Years.", petAgeInCatYears, petAgeInHumanYears);
 }
 
 @end

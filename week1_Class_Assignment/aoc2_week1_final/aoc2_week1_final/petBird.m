@@ -27,7 +27,13 @@
         NSLog(@"Pet Bird was Created");
     }
     return self;
-    
+}
 
+//over ride calculate pet age in human years method
+//from our base class (PetAnimal)
+-(void)calculatePetAgeInHumanYears
+{
+    [self setPetAgeInBirdYears:(petAgeInHumanYears * 14)];
+    NSLog(@"%i Dog Years = %i Human Years.", petAgeInBirdYears, petAgeInHumanYears);
 }
 @end

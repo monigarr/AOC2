@@ -7,9 +7,9 @@
 //  This is a subclass of petCat
 //  petCat is a subclass of petFactory
 
-#import "petCat.h"
+#import "petAnimal.h"
 
-@interface petBird : petCat
+@interface petBird : PetAnimal
 {
     int birdCageSize;
 }

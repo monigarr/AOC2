@@ -10,22 +10,22 @@
 
 @implementation petFactory
 
-+(petCat *)createNewPet : (int)petType
++(PetAnimal *)createNewPet : (int)petAnimal
 {
     //if cat is requested, make a cat
-    if (petType == CAT)
+    if (petAnimal == CAT)
     {
         return [[petCat alloc]init];
     }
     
     //if dog is requested, make a dog
-    else if (petType == DOG)
+    else if (petAnimal == DOG)
     {
         return [[petDog alloc]init];
     }
     
     //if bird is requested, make a bird
-    else if (petType == BIRD)
+    else if (petAnimal == BIRD)
     {
         return [[petBird alloc]init];
     }
