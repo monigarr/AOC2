@@ -15,7 +15,7 @@
 
 @implementation ViewController
 
-//setup setters & getters for properties
+//setup setters & getters for the properties
 //I declared in my interface (header) file (ViewController.h)
 @synthesize typingNumber, firstNumber, secondNumber, operation, calculatorDisplay;
 
@@ -24,6 +24,7 @@
     //if switch is on, allow magic to happen.
     if (onOffSwitch.on != false)
     {
+        //call my object up
         infoViewController *infoView = [[infoViewController alloc] initWithNibName:@"infoViewController" bundle:nil];
         [self presentViewController:infoView animated:YES completion:nil];
     }

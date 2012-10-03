@@ -38,7 +38,7 @@
 -(IBAction)onClose:(id)sender
 {
     //good spot to show settings
-    //user help here to send user to web page in safari
+    //user help or to send user to web page in safari
     [self dismissViewControllerAnimated:TRUE completion:nil];
 }
 
