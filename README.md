@@ -23,6 +23,7 @@ PROJECT 1
 		CHANGED
 		1 Base Class  -> petAnimal
 		3 Sub Classes -> petCat, petDog, petBird
+	Video Review & Demo: http://youtu.be/PPK6mthiZeg
 
 PROJECT 2
 ==========
@@ -34,3 +35,4 @@ PROJECT 2
 		background color changer UISegmentedController
 		info button opens another view (infoViewController)
 		infoViewController shows name & close button
+	Video Review & Demo:  http://youtu.be/LLLTve0rxLY
