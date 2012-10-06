@@ -7,19 +7,24 @@
 //
 
 #import "addEventViewController.h"
-#import "ViewController.h"
+
 
 @implementation addEventViewController
+
+//setup setters & getters
+@synthesize datePicker, delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        delegate = nil;
     }
     return self;
 }
 
+//Buttons
 -(IBAction)onClick:(id)sender
 {
     UIButton *addEventButton = (UIButton *)sender;
@@ -27,24 +32,33 @@
     //Save Button (save text & date)
     if (addEventButton.tag == 0)
     {
+        datePicker.minimumDate = [NSDate date];
+        NSDate *datePicked = [datePicker date];
+        if(datePicked != nil)
+        {
+            NSDateFormatter *niceLookingDate = [[NSDateFormatter alloc]init];
+            if (niceLookingDate != nil)
+            {
+                [niceLookingDate setDateFormat:@"MMMM dd, h:mm a"];
+            }
+            dateText = [niceLookingDate stringFromDate:datePicked];
+            NSLog(@"%@", dateText);
+        }
+        
         //save text that user entered so we can
         //show in main view screen later
-        NSString *eventDetails = textField.text;
+        NSString *eventDetails = eventTextField.text;
         
         //show event text entered in log for now
         NSLog(@"Event Details: %@", eventDetails);
         
-        //UIDatePicker *picker = (UIDatePicker *)sender;
-        //if (picker != nil)
-        //{
-            //NSDate *date = picker.date;
-            //show date picked in log for now 
-            //NSLog(@"date=%@", [date description]);
-        //}
-        
-        //close addEventView and show Main ViewController
-        //with all the saved events
-        
+        //close addEventView and show Main ViewController with all the saved events
+        [self dismissViewControllerAnimated:TRUE completion:nil];
+        if (delegate != nil)
+        {
+            newEvent = [NSString stringWithFormat:@"%@ \n%@\n\n", eventTextField.text, dateText];
+            [delegate setEvent:newEvent];
+        }
     }
     
     //close keyboard button
@@ -52,13 +66,13 @@
     {
         //make keyboard the first responder if it's not already
         //so we can close the keyboard
-        [textField resignFirstResponder];
+        [eventTextField resignFirstResponder];
         
         //close the keyboard
-        [textField setFrame:textFieldFrame];
+        [eventTextField setFrame:eventTextFieldFrame];
     }
     
-    [textField resignFirstResponder];
+    [eventTextField resignFirstResponder];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -67,18 +81,16 @@
     [super viewWillAppear:animated];
 }
 
--(void)keyboardWillShow:(NSNotification *)notification
+-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-
-}
-
--(void)keyboardWillHide:(NSNotification *)notification
-{
-
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 - (void)viewDidLoad
 {
+    //make sure datePicker shows todays date as the min. date
+    datePicker.minimumDate = [NSDate date];
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }

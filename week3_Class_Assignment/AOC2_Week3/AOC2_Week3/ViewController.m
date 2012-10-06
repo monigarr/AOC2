@@ -7,28 +7,39 @@
 //
 
 #import "ViewController.h"
-#import "addEventViewController.h"
-
 
 @implementation ViewController
+
+-(IBAction)onClick:(id)sender
+{
+    //click button to show Add Event view
+    addEventViewController *viewController = [[addEventViewController alloc]initWithNibName:@"addEventViewController" bundle:nil];
+        if (viewController != nil)
+        {
+            viewController.delegate = self;
+            [self presentViewController:viewController animated:TRUE completion:nil];
+        }
+}
+
+-(void)setEvent:(NSString *)eventsString
+{
+    eventDetails.text = [eventDetails.text stringByAppendingString:eventsString];
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    } else {
+        return YES;
+    }
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
-
--(IBAction)onClick:(id)sender
-{
-    //click button to show Add Event view
-    addEventViewController *viewController = [[addEventViewController alloc]initWithNibName:@"addEventViewController" bundle:nil];
-    //controller.delegate = self;
-        if (viewController != nil)
-        {
-            [self presentViewController:viewController animated:TRUE completion:nil];
-        }
-}
-
 
 - (void)didReceiveMemoryWarning
 {

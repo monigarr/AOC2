@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "addEventViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <PassEventDetails>
 {
-    
+    IBOutlet UITextView *eventDetails;
 }
 
 -(IBAction)onClick:(id)sender;

@@ -7,16 +7,26 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ViewController.h"
 
+@protocol PassEventDetails <NSObject>
+
+@required
+-(void)setEvent:(NSString *)eventsString;
+@end
 
 @interface addEventViewController : UIViewController
 {
-    IBOutlet UITextField *textField;
+    IBOutlet UITextField *eventTextField;
     IBOutlet UIDatePicker *datePicker;
-    CGRect textFieldFrame;
+    NSString *dateText;
+    NSString *newEvent;
+    CGRect eventTextFieldFrame;
+    id <PassEventDetails> delegate;
 }
 
+//
+@property (nonatomic, retain)IBOutlet UIDatePicker *datePicker;
+@property (strong) id <PassEventDetails> delegate;
 
 //process Buttons: Save, Close Keyboard
 -(IBAction)onClick:(id)sender;
