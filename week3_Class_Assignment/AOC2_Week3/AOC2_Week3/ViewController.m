@@ -37,6 +37,9 @@
 
 - (void)viewDidLoad
 {
+    //setup visuals and labels
+    self.view.backgroundColor = [UIColor whiteColor];
+
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }

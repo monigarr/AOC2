@@ -12,6 +12,7 @@
 @interface ViewController : UIViewController <PassEventDetails>
 {
     IBOutlet UITextView *eventDetails;
+    IBOutlet UIButton *addEventButton;
 }
 
 -(IBAction)onClick:(id)sender;

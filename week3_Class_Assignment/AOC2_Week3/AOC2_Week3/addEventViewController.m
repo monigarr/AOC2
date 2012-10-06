@@ -88,6 +88,9 @@
 
 - (void)viewDidLoad
 {
+    //setup visuals and labels
+    self.view.backgroundColor = [UIColor whiteColor];
+
     //make sure datePicker shows todays date as the min. date
     datePicker.minimumDate = [NSDate date];
     
