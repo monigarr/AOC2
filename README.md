@@ -57,7 +57,7 @@ PROJECT 3
 		UILabel 'select date & time of event' above the date picker.
 	Create custom delegate to pass data between the two views. 
 	To create carriage returns in text, use \n
-	Video Review & Demo:
+	Video Review & Demo:  http://youtu.be/pWXjawNq9bA
 
 PROJECT 4
 ==========
