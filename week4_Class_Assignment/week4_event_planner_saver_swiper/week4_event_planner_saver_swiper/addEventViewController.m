@@ -34,15 +34,19 @@
     [super viewWillAppear:animated];
 }
 
--(void)closeKeyboard:(id)sender
+-(IBAction)closeKeyboard:(id)sender
 {
-
+    //if button clicked close keyboard
+    if (closeKeyboard.tag == 2)
+    {
         //make keyboard the first responder if it's not already
         //so we can close the keyboard
         [eventTextField resignFirstResponder];
         
         //close the keyboard
         [eventTextField setFrame:eventTextFieldFrame];
+        NSLog(@"closeKeyboard");
+    }
 }
 
 - (void)viewDidLoad
@@ -78,7 +82,7 @@
                 [formatDate setDateFormat:@"MMMM dd, h:mm a"];
             }
             text = [formatDate stringFromDate:datePicked];
-            NSLog(@"%@", text);
+            NSLog(@"Swiped Left %@", text);
         }
         
         if (delegate != nil)
@@ -86,11 +90,12 @@
             event = [NSString stringWithFormat:@"%@ \n%@ \n\n", eventTextField.text, text];
             [delegate setEvent:event];
             [self dismissViewControllerAnimated:TRUE completion:nil];
+            NSLog(@"Swiped Left delegate is not nil");
         }
         
         else if (delegate == nil)
         {
-            
+            NSLog(@"Swiped Left delegate is nil");
         }
     }
 }

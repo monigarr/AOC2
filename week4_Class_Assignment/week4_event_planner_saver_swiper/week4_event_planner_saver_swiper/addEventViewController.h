@@ -31,6 +31,6 @@
 @property (nonatomic, retain)IBOutlet UIDatePicker *datePicker;
 
 -(IBAction)onSwipe:(UISwipeGestureRecognizer *)recognizer;
--(void)closeKeyboard:(id)sender;
+-(IBAction)closeKeyboard:(id)sender;
 
 @end

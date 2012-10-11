@@ -22,6 +22,7 @@
         NSString *eventString = eventDetails.text;
         [userDefaults setObject:eventString forKey:@"event"];
         [userDefaults synchronize];
+        NSLog(@"onSave Action");
     }
 }
 
@@ -37,6 +38,7 @@
 -(void)setEvent:(NSString *)eventString
 {
     eventDetails.text = [eventDetails.text stringByAppendingString:eventString];
+    NSLog(@"setEvent %@", eventDetails.text);
 }
 
 -(void)onSwipe:(UISwipeGestureRecognizer *)recognizer
