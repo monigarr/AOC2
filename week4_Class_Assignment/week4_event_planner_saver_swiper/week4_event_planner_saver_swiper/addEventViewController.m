@@ -34,6 +34,24 @@
     [super viewWillAppear:animated];
 }
 
+-(void)closeKeyboard:(id)sender
+{
+
+        //make keyboard the first responder if it's not already
+        //so we can close the keyboard
+        [eventTextField resignFirstResponder];
+        
+        //close the keyboard
+        [eventTextField setFrame:eventTextFieldFrame];
+}
+
+- (void)viewDidLoad
+{
+    
+    [super viewDidLoad];
+    datePicker.minimumDate = [NSDate date];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -75,18 +93,6 @@
             
         }
     }
-}
-
--(void)closeKeyboard:(id)sender
-{
-    [eventTextField resignFirstResponder];
-}
-
-- (void)viewDidLoad
-{
-    
-    [super viewDidLoad];
-    datePicker.minimumDate = [NSDate date];
 }
 
 @end

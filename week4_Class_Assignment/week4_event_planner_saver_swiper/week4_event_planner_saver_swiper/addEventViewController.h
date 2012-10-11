@@ -19,10 +19,12 @@
     IBOutlet UIDatePicker *datePicker;
     IBOutlet UILabel *swipeLeftLabel;
     IBOutlet UITextField *eventTextField;
+    IBOutlet UIButton *closeKeyboard;
     NSString *text;
     NSString *event;
     UISwipeGestureRecognizer *swipeLeft;
     id <PassEventDetails> delegate;
+    CGRect eventTextFieldFrame;
 }
 
 @property (strong) id<PassEventDetails> delegate;
