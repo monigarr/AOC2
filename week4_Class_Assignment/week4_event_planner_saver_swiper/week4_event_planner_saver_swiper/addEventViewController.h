@@ -16,19 +16,30 @@
 
 @interface addEventViewController : UIViewController
 {
+    //hook these up in xib view
     IBOutlet UIDatePicker *datePicker;
-    IBOutlet UILabel *swipeLeftLabel;
     IBOutlet UITextField *eventTextField;
     IBOutlet UIButton *closeKeyboard;
+    //enable user interaction in xib view
+    IBOutlet UILabel *swipeLeftLabel;
+    
+    //hold event details
     NSString *text;
     NSString *event;
+    
+    //gestures
     UISwipeGestureRecognizer *swipeLeft;
+    
+    //pass event details
     id <PassEventDetails> delegate;
+    
+    //make frame for moving keyboard / textfield first responder
     CGRect eventTextFieldFrame;
 }
 
 @property (strong) id<PassEventDetails> delegate;
 @property (nonatomic, retain)IBOutlet UIDatePicker *datePicker;
+
 
 -(IBAction)onSwipe:(UISwipeGestureRecognizer *)recognizer;
 -(IBAction)closeKeyboard:(id)sender;

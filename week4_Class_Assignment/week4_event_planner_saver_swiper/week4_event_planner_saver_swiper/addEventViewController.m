@@ -14,19 +14,21 @@
 
 @implementation addEventViewController
 
+//setup the setters and getters to be used later
 @synthesize delegate, datePicker;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    //make sure label is ready to be swiped on this view
+    
     swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(onSwipe:)];
     swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;
     [swipeLeftLabel addGestureRecognizer:swipeLeft];

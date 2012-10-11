@@ -14,6 +14,8 @@
 
 @implementation ViewController
 
+//save event strings from secondary view
+//that are showing in the textfield on this main view
 -(IBAction)onSave:(id)sender
 {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -26,6 +28,7 @@
     }
 }
 
+//make sure the swipe enabled label is ready
 -(void)viewWillAppear:(BOOL)animated
 {
     swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(onSwipe:)];
@@ -35,12 +38,15 @@
     [super viewWillAppear:animated];
 }
 
+//set the Event strings for this view
 -(void)setEvent:(NSString *)eventString
 {
     eventDetails.text = [eventDetails.text stringByAppendingString:eventString];
     NSLog(@"setEvent %@", eventDetails.text);
 }
 
+//show the secondary view when
+//the label is swiped
 -(void)onSwipe:(UISwipeGestureRecognizer *)recognizer
 {
     if(recognizer.direction == UISwipeGestureRecognizerDirectionRight)
@@ -54,12 +60,19 @@
             NSLog(@"Swiped Right");
         }
     }
+    //if label is swiped the wrong way
+    //give me a hint in my log
     else if (recognizer.direction == UISwipeGestureRecognizerDirectionLeft)
     {
         NSLog(@"Please Swipe Right");
     }
 }
 
+//load up & show the saved event strings into this main view
+//load up the event strings from the secondary view that are not
+//saved yet but were just created.
+//must click that save button to keep the event strings in this
+//view the next time this app is run.
 - (void)viewDidLoad
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
